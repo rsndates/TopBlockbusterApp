@@ -1,3 +1,0 @@
-FROM androidsdk
-
-RUN npm install -g cordova

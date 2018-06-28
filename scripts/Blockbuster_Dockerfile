@@ -42,4 +42,9 @@ RUN apt-get update \
     && rm -rf /tmp/sdk-tools-linux-${ANDROID_SDK_VERSION}.zip \ 
     && mkdir /application
 
+#Setup working directory
 WORKDIR /application
+
+#Expose port
+EXPOSE 8080
+
