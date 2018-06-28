@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { LoadingController, AlertController  } from 'ionic-angular';
+import { Component} from '@angular/core';
+import { NavController, LoadingController, AlertController  } from 'ionic-angular';
 import { MoviesProvider } from '../../providers/movies/movies';
-//import { DisplayMoviesPage } from '../display-movies/display-movies';
+import { DisplayMoviesPage } from '../display-movies/display-movies';
+
 
 @Component({
   selector: 'page-home',
@@ -9,18 +10,23 @@ import { MoviesProvider } from '../../providers/movies/movies';
 })
 export class HomePage {
     //Properties
+  //  @ViewChild("appNav") nav: NavController;
     peak: any;
     rank: any;
     title: any;
     year: any;
     worldWideGross: any;
 
-  constructor(public moviesService: MoviesProvider, public alertCtrl: AlertController, public loadingCtrl: LoadingController) {
+  constructor(public nav:NavController, public moviesService: MoviesProvider, public alertCtrl: AlertController, public loadingCtrl: LoadingController) {
         this.peak = "";
         this.title = "";
         this.rank = 0;
         this.year = 0;
         this.worldWideGross = 0;
+  }
+
+  goToSecond() {
+    this.nav.push(DisplayMoviesPage);
   }
 
   findMovies(){
@@ -30,23 +36,23 @@ export class HomePage {
         loading.present();
 
 
-    let options = {};
+    let options = <any>{};
 
-    if(this.peak != ""){
-      options.Peak = this.peak;
-    }
-    if(this.title != ""){
-      options.Title = this.title;
-    }
-    if(this.rank != 0 || this.rank != null){
-      options.Rank = this.rank;
-    }
+    // if(this.peak != ""){
+    //   options.Peak = this.peak;
+    // }
+    // if(this.title != ""){
+    //   options.Title = this.title;
+    // }
+    // if(this.rank != 0 || this.rank != null){
+    //   options.Rank = this.rank;
+    // }
     if(this.year != 0 || this.year != null){
       options.Year = this.year;
     }
-    if(this.worldWideGross != 0){
-      options.WorldwideGross = this.worldWideGross;
-    }
+    // if(this.worldWideGross != 0){
+    //   options.WorldwideGross = this.worldWideGross;
+    // }
 
       //options.Rank = 3;
 
@@ -64,18 +70,10 @@ export class HomePage {
                    alert.present();
                } else {
                  //Need to push the movie display pagesea
-                   // this.nav.push(DisplayMoviesPage, {
-                   //     movies: data,
-                   //     details: options
-                   // });
+                   this.nav.push(DisplayMoviesPage, {
+                       movies: data
+                   }).catch(err=>console.log(err));
 
-                   let alert = this.alertCtrl.create({
-                       title: 'Oops!',
-                       subTitle: data,
-                       buttons: ['Ok']
-                   });
-
-                   alert.present();
                }
 
            }, (err) => {
@@ -91,7 +89,7 @@ export class HomePage {
         });
         loading.present();
 
-    let options = {};
+    let options = <any>{};
 
     switch(type){
       case 1:
@@ -120,17 +118,9 @@ export class HomePage {
                    alert.present();
                } else {
                  //Need to push the movie display pagesea
-                   // this.nav.push(DisplayMoviesPage, {
-                   //     movies: data,
-                   //     details: options
-                   // });
-                   // let alert = this.alertCtrl.create({
-                   //     title: 'Oops!',
-                   //     subTitle: data,
-                   //     buttons: ['Ok']
-                   // });
-                   //
-                   // alert.present();
+                 this.nav.push(DisplayMoviesPage, {
+                     movies: data
+                 });
 
                }
 

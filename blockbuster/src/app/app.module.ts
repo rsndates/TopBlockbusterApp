@@ -7,22 +7,25 @@ import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { DisplayMoviesPage } from '../pages/display-movies/display-movies';
 import { MoviesProvider } from '../providers/movies/movies';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    DisplayMoviesPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(HomePage)
+    IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    DisplayMoviesPage
   ],
   providers: [
     StatusBar,

@@ -15,4 +15,11 @@
 
 <ion-content padding>
 
+  <ion-card *ngFor="let movie of movies">
+    <div class="card-title-container">
+      <p class="card-title">{{movie.Title}}</p>
+      <p class="room-description"> {{movie.Rank}} <ion-icon name="people"></ion-icon> {{movie.Year}} </p>
+    </div>
+</ion-card>
+
 </ion-content>

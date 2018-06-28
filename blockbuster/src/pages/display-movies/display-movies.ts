@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the DisplayMoviesPage page.
@@ -8,18 +8,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+// @IonicPage()
 @Component({
   selector: 'page-display-movies',
   templateUrl: 'display-movies.html',
 })
 export class DisplayMoviesPage {
+  movies: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public nav: NavController, public navParams: NavParams) {
+    this.movies = this.navParams.get('movies');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DisplayMoviesPage');
+  }
+
+  closeWindow() {
+    this.nav.pop();
   }
 
 }

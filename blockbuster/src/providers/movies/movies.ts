@@ -14,6 +14,7 @@ export class MoviesProvider {
 
   constructor(public http: Http) {
     console.log('Hello MoviesProvider Provider');
+
   }
 
   getMovies(options){
