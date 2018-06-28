@@ -97,12 +97,12 @@ var HomePage = /** @class */ (function () {
         this.moviesService.getMovies(options).then(function (data) {
             loading.dismiss();
             if (typeof (data[0]) === "undefined") {
-                var alert = _this.alertCtrl.create({
+                var alert_1 = _this.alertCtrl.create({
                     title: 'Oops!',
                     subTitle: 'Sorry, no movies could be found for your search criteria.',
                     buttons: ['Ok']
                 });
-                alert.present();
+                alert_1.present();
             }
             else {
                 //Need to push the movie display pagesea
@@ -137,12 +137,12 @@ var HomePage = /** @class */ (function () {
         this.moviesService.getMovies(options).then(function (data) {
             loading.dismiss();
             if (typeof (data[0]) === "undefined") {
-                var alert = _this.alertCtrl.create({
+                var alert_2 = _this.alertCtrl.create({
                     title: 'Oops!',
                     subTitle: 'Sorry, no movies could be found for your search criteria.',
                     buttons: ['Ok']
                 });
-                alert.present();
+                alert_2.present();
             }
             else {
                 //Need to push the movie display pagesea
@@ -158,10 +158,9 @@ var HomePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-home',template:/*ion-inline-start:"/Users/robertdates/Desktop/TopBlockbusterApp/blockbuster/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Search for the Top BlockBusters\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list no-lines>\n         <ion-item>\n             <ion-label>Year</ion-label>\n             <ion-select [(ngModel)]="year">\n               <!-- I know I can use a loop but couldnt get the syntax -->\n                 <ion-option [value]=null>N/A</ion-option>\n                 <ion-option [value]="1994">1994</ion-option>\n                 <ion-option [value]="1995">1995</ion-option>\n                 <ion-option [value]="1996">1996</ion-option>\n                 <ion-option [value]="1997">1997</ion-option>\n                 <ion-option [value]="1998">1998</ion-option>\n                 <ion-option [value]="1999">1999</ion-option>\n                 <ion-option [value]="2000">2000</ion-option>\n                 <ion-option [value]="2001">2001</ion-option>\n                 <ion-option [value]="2002">2002</ion-option>\n                 <ion-option [value]="2003">2003</ion-option>\n                 <ion-option [value]="2004">2004</ion-option>\n                 <ion-option [value]="2005">2005</ion-option>\n                 <ion-option [value]="2006">2006</ion-option>\n                 <ion-option [value]="2007">2007</ion-option>\n                 <ion-option [value]="2008">2008</ion-option>\n                 <ion-option [value]="2009">2009</ion-option>\n                 <ion-option [value]="2010">2010</ion-option>\n                 <ion-option [value]="2011">2011</ion-option>\n                 <ion-option [value]="2012">2012</ion-option>\n                 <ion-option [value]="2013">2013</ion-option>\n                 <ion-option [value]="2014">2014</ion-option>\n                 <ion-option [value]="2015">2015</ion-option>\n                 <ion-option [value]="2016">2016</ion-option>\n                 <ion-option [value]="2017">2017</ion-option>\n                 <ion-option [value]="2018">2018</ion-option>\n             </ion-select>\n         </ion-item>\n         <button (click)="findMovies()" ion-button>Search</button>\n\n     </ion-list>\n\n         <ion-label>Search by Gross</ion-label>\n\n\n       <button (click)="moviesLessThanOneB(1)" ion-button>$ <1B</button>\n       <button (click)="moviesLessThanOneB(2)" ion-button>1B <$<2B</button>\n       <button (click)="moviesLessThanOneB(3)" ion-button>$ >2B</button>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/robertdates/Desktop/TopBlockbusterApp/blockbuster/src/pages/home/home.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__providers_movies_movies__["a" /* MoviesProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_movies_movies__["a" /* MoviesProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_movies_movies__["a" /* MoviesProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]])
     ], HomePage);
     return HomePage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=home.js.map

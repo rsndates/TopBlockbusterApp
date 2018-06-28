@@ -57,7 +57,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var HomePage = /** @class */ (function () {
-    function HomePage(moviesService, alertCtrl, loadingCtrl) {
+    function HomePage(nav, moviesService, alertCtrl, loadingCtrl) {
+        this.nav = nav;
         this.moviesService = moviesService;
         this.alertCtrl = alertCtrl;
         this.loadingCtrl = loadingCtrl;
@@ -67,6 +68,9 @@ var HomePage = /** @class */ (function () {
         this.year = 0;
         this.worldWideGross = 0;
     }
+    HomePage.prototype.goToSecond = function () {
+        this.nav.push(__WEBPACK_IMPORTED_MODULE_3__display_movies_display_movies__["a" /* DisplayMoviesPage */]);
+    };
     HomePage.prototype.findMovies = function () {
         var _this = this;
         var loading = this.loadingCtrl.create({
@@ -143,23 +147,18 @@ var HomePage = /** @class */ (function () {
             else {
                 //Need to push the movie display pagesea
                 _this.nav.push(__WEBPACK_IMPORTED_MODULE_3__display_movies_display_movies__["a" /* DisplayMoviesPage */], {
-                    movies: data,
-                    details: options
+                    movies: data
                 });
             }
         }, function (err) {
             console.log(err);
         });
     };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])("appNav"),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */])
-    ], HomePage.prototype, "nav", void 0);
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/robertdates/Desktop/TopBlockbusterApp/blockbuster/src/pages/home/home.html"*/'<ion-nav #appNav [root]="rootPage"></ion-nav>\n<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Search for the Top BlockBusters\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list no-lines>\n         <ion-item>\n             <ion-label>Year</ion-label>\n             <ion-select [(ngModel)]="year">\n               <!-- I know I can use a loop but couldnt get the syntax -->\n                 <ion-option [value]=null>N/A</ion-option>\n                 <ion-option [value]="1994">1994</ion-option>\n                 <ion-option [value]="1995">1995</ion-option>\n                 <ion-option [value]="1996">1996</ion-option>\n                 <ion-option [value]="1997">1997</ion-option>\n                 <ion-option [value]="1998">1998</ion-option>\n                 <ion-option [value]="1999">1999</ion-option>\n                 <ion-option [value]="2000">2000</ion-option>\n                 <ion-option [value]="2001">2001</ion-option>\n                 <ion-option [value]="2002">2002</ion-option>\n                 <ion-option [value]="2003">2003</ion-option>\n                 <ion-option [value]="2004">2004</ion-option>\n                 <ion-option [value]="2005">2005</ion-option>\n                 <ion-option [value]="2006">2006</ion-option>\n                 <ion-option [value]="2007">2007</ion-option>\n                 <ion-option [value]="2008">2008</ion-option>\n                 <ion-option [value]="2009">2009</ion-option>\n                 <ion-option [value]="2010">2010</ion-option>\n                 <ion-option [value]="2011">2011</ion-option>\n                 <ion-option [value]="2012">2012</ion-option>\n                 <ion-option [value]="2013">2013</ion-option>\n                 <ion-option [value]="2014">2014</ion-option>\n                 <ion-option [value]="2015">2015</ion-option>\n                 <ion-option [value]="2016">2016</ion-option>\n                 <ion-option [value]="2017">2017</ion-option>\n                 <ion-option [value]="2018">2018</ion-option>\n             </ion-select>\n         </ion-item>\n         <button (click)="findMovies()" ion-button>Search</button>\n     </ion-list>\n\n         <ion-label>Search by Gross</ion-label>\n\n\n       <button (click)="moviesLessThanOneB(1)" ion-button>$ <1B</button>\n       <button (click)="moviesLessThanOneB(2)" ion-button>1B <$<2B</button>\n       <button (click)="moviesLessThanOneB(3)" ion-button>$ >2B</button>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/robertdates/Desktop/TopBlockbusterApp/blockbuster/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/robertdates/Desktop/TopBlockbusterApp/blockbuster/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Search for the Top BlockBusters\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list no-lines>\n         <ion-item>\n             <ion-label>Year</ion-label>\n             <ion-select [(ngModel)]="year">\n               <!-- I know I can use a loop but couldnt get the syntax -->\n                 <ion-option [value]=null>N/A</ion-option>\n                 <ion-option [value]="1994">1994</ion-option>\n                 <ion-option [value]="1995">1995</ion-option>\n                 <ion-option [value]="1996">1996</ion-option>\n                 <ion-option [value]="1997">1997</ion-option>\n                 <ion-option [value]="1998">1998</ion-option>\n                 <ion-option [value]="1999">1999</ion-option>\n                 <ion-option [value]="2000">2000</ion-option>\n                 <ion-option [value]="2001">2001</ion-option>\n                 <ion-option [value]="2002">2002</ion-option>\n                 <ion-option [value]="2003">2003</ion-option>\n                 <ion-option [value]="2004">2004</ion-option>\n                 <ion-option [value]="2005">2005</ion-option>\n                 <ion-option [value]="2006">2006</ion-option>\n                 <ion-option [value]="2007">2007</ion-option>\n                 <ion-option [value]="2008">2008</ion-option>\n                 <ion-option [value]="2009">2009</ion-option>\n                 <ion-option [value]="2010">2010</ion-option>\n                 <ion-option [value]="2011">2011</ion-option>\n                 <ion-option [value]="2012">2012</ion-option>\n                 <ion-option [value]="2013">2013</ion-option>\n                 <ion-option [value]="2014">2014</ion-option>\n                 <ion-option [value]="2015">2015</ion-option>\n                 <ion-option [value]="2016">2016</ion-option>\n                 <ion-option [value]="2017">2017</ion-option>\n                 <ion-option [value]="2018">2018</ion-option>\n             </ion-select>\n         </ion-item>\n         <button (click)="findMovies()" ion-button>Search</button>\n\n     </ion-list>\n\n         <ion-label>Search by Gross</ion-label>\n\n\n       <button (click)="moviesLessThanOneB(1)" ion-button>$ <1B</button>\n       <button (click)="moviesLessThanOneB(2)" ion-button>1B <$<2B</button>\n       <button (click)="moviesLessThanOneB(3)" ion-button>$ >2B</button>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/robertdates/Desktop/TopBlockbusterApp/blockbuster/src/pages/home/home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__providers_movies_movies__["a" /* MoviesProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_movies_movies__["a" /* MoviesProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]])
     ], HomePage);
     return HomePage;
 }());
@@ -281,7 +280,7 @@ var AppModule = /** @class */ (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_5__angular_http__["c" /* HttpModule */],
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */], {}, {
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */], {}, {
                     links: []
                 })
             ],
@@ -348,7 +347,7 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/robertdates/Desktop/TopBlockbusterApp/blockbuster/src/app/app.html"*/'\n'/*ion-inline-end:"/Users/robertdates/Desktop/TopBlockbusterApp/blockbuster/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/robertdates/Desktop/TopBlockbusterApp/blockbuster/src/app/app.html"*/'<ion-nav #appNav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/robertdates/Desktop/TopBlockbusterApp/blockbuster/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -388,17 +387,17 @@ var DisplayMoviesPage = /** @class */ (function () {
     function DisplayMoviesPage(nav, navParams) {
         this.nav = nav;
         this.navParams = navParams;
-        this.movies = this.navParams.get('Year');
+        this.movies = this.navParams.get('movies');
     }
     DisplayMoviesPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad DisplayMoviesPage');
     };
     DisplayMoviesPage.prototype.closeWindow = function () {
-        this.nav.popToRoot();
+        this.nav.pop();
     };
     DisplayMoviesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-display-movies',template:/*ion-inline-start:"/Users/robertdates/Desktop/TopBlockbusterApp/blockbuster/src/pages/display-movies/display-movies.html"*/'<!--\n  Generated template for the DisplayMoviesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>DisplayMovies</ion-title>\n    <button (click)="closeWindow()" ion-button>Search</button>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-card *ngFor="let movie of movies">\n    <div class="card-title-container">\n      <p class="card-title">{{movie.Title}</p>\n      <p class="room-description"> {{movie.WorldWideGross}} <ion-icon name="cash"></ion-icon> {{movie.Year}} <ion-icon name="people"></ion-icon> {{movie.Rank}}</p>\n    </div>\n</ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/robertdates/Desktop/TopBlockbusterApp/blockbuster/src/pages/display-movies/display-movies.html"*/,
+            selector: 'page-display-movies',template:/*ion-inline-start:"/Users/robertdates/Desktop/TopBlockbusterApp/blockbuster/src/pages/display-movies/display-movies.html"*/'<!--\n  Generated template for the DisplayMoviesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>DisplayMovies</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-card *ngFor="let movie of movies">\n    <div class="card-title-container">\n      <p class="card-title">{{movie.Title}}</p>\n      <p class="room-description"> {{movie.Rank}} <ion-icon name="people"></ion-icon> {{movie.Year}} </p>\n    </div>\n</ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/robertdates/Desktop/TopBlockbusterApp/blockbuster/src/pages/display-movies/display-movies.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], DisplayMoviesPage);
