@@ -13,23 +13,35 @@ Reference the docker at https://hub.docker.com/r/rdates/blockbuster/  for the im
 
 Instructions for running the application.
 
-Once this github repo is cloned downloaded you will need to run these two commands
+Run App on Docker
 
--- ./scripts/docker_build.sh
 
--- ./scripts/docker_run.sh
+Git Clone Repo: 
 
-After this peform these steps your docker container is now ready to be used.  Attach the the container then run the following command
+— git clone https://github.com/rsndates/TopBlockbusterApp.git
 
--- cd blockbuster
+Pull Docker image: 
 
--- nohup node server/server.js > /dev/null 2>&1 &
+ —  docker pull rates/blockbuster:latest
 
-This line will start the node.js server and run it in a background task allowing you do start run the application locally to the docker.
+Start Docker container:
 
--- ionic serve
+— ./scripts/docker_run.sh
 
-This will run the application through a web explorer. In order to use ionic-cordova to compile the android appication you will want to run.
+Start server in the background:
+
+— nohup node server/server.js > /dev/null 2>&1 &
+
+Run application:
+
+— cd blockbuster
+— ionic serve
+
+View in web browser at URL:
+
+http://localhost:8100
+
+Future Task: Get the andoird emulator working shown below:
 
 -- ionic cordova run android      -or-     ionic cordova emulate android     (using the emulator)
 
