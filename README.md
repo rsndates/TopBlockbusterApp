@@ -50,6 +50,8 @@ Future Task: Get the andoird emulator working shown below:
 
 -- ionic cordova run android      -or-     ionic cordova emulate android     (using the emulator)
 
-These steps may fail and there will  be a prompt that asks you to run a line of code to build the project for your environment. Follow that instruction exact and try the last step again.
+These steps may fail and there will  be a prompt that asks you to run a line of code to build the project for your environment. The line should looke like the following command.
+
+-- npm rebuild node-sass --force
 
 
