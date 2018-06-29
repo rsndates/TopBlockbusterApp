@@ -41,6 +41,11 @@ View in web browser at URL:
 
 http://localhost:8100
 
+Stop application and exit Container: 
+
+— Ctrl-C
+— exit
+
 Future Task: Get the andoird emulator working shown below:
 
 -- ionic cordova run android      -or-     ionic cordova emulate android     (using the emulator)
