@@ -46,5 +46,5 @@ RUN apt-get update \
 WORKDIR /application
 
 #Expose port
-EXPOSE 8080
+EXPOSE 8080 8100
 
