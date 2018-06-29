@@ -9,11 +9,11 @@ Ionic - frontend application framework with cordova
 
 Node - javascript powered language
 
+Reference the docker at https://hub.docker.com/r/rdates/blockbuster/  for the image
+
 Instructions for running the application.
 
-Reference the docker at https://hub.docker.com/r/rdates/blockbuster/
-
-Once downloaded you will need to run these two commands
+Once this github repo is cloned downloaded you will need to run these two commands
 
 -- ./scripts/docker_build.sh
 
