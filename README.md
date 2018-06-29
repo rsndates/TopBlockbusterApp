@@ -35,7 +35,7 @@ Start server in the background:
 Run application:
 
 -- cd blockbuster
--- ionic serve -i
+-- ionic serve -l
 
 View in web browser at URL:
 
