@@ -18,24 +18,24 @@ Run App on Docker
 
 Git Clone Repo: 
 
-— git clone https://github.com/rsndates/TopBlockbusterApp.git
+-- git clone https://github.com/rsndates/TopBlockbusterApp.git
 
 Pull Docker image: 
 
- —  docker pull rates/blockbuster:latest
+--  docker pull rates/blockbuster:latest
 
 Start Docker container:
 
-— ./scripts/docker_run.sh
+-- ./scripts/docker_run.sh
 
 Start server in the background:
 
-— nohup node server/server.js > /dev/null 2>&1 &
+-- nohup node server/server.js > /dev/null 2>&1 &
 
 Run application:
 
-— cd blockbuster
-— ionic serve
+-- cd blockbuster
+-- ionic serve
 
 View in web browser at URL:
 
@@ -43,8 +43,8 @@ http://localhost:8100
 
 Stop application and exit Container: 
 
-— Ctrl-C
-— exit
+-- Ctrl-C
+-- exit
 
 Future Task: Get the andoird emulator working shown below:
 
