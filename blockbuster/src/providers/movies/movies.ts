@@ -23,7 +23,7 @@ export class MoviesProvider {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
 
-      this.http.post('http://localhost:8080/api/movies', JSON.stringify(options), {headers: headers})
+      this.http.post('http://9.236.99.81:8080/api/movies', JSON.stringify(options), {headers: headers})
         .map(res => res.json())
         .subscribe(data => {
           resolve(data);
