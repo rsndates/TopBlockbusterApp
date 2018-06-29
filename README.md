@@ -11,7 +11,7 @@ Node - javascript powered language
 
 Instructions for running the application.
 
-Reference the docker at 
+Reference the docker at https://hub.docker.com/r/rdates/blockbuster/
 
 Once downloaded you will need to run these two commands
 
