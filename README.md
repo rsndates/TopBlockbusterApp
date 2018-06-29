@@ -35,6 +35,7 @@ Start server in the background:
 Run application:
 
 -- cd blockbuster
+
 -- ionic serve -l
 
 View in web browser at URL:
@@ -44,6 +45,7 @@ http://localhost:8100
 Stop application and exit Container: 
 
 -- Ctrl-C
+
 -- exit
 
 Future Task: Get the andoird emulator working shown below:
